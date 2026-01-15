@@ -1,2 +1,1 @@
-# Demo
-Added another line to README.md
+This is my own personal skylander checklist website. If you find it by accident, congrats you've found nothing of value to anyone other then myself.
