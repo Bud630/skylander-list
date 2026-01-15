@@ -1,0 +1,384 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+header h1 {
+    color: #333;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation */
+.game-nav {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-nav h2 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.game-nav a {
+    display: inline-block;
+    margin: 5px 10px 5px 0;
+    padding: 8px 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-nav a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Filter Controls */
+.filter-controls {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-controls h2 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.filter-btn {
+    margin: 5px 5px 5px 0;
+    padding: 8px 15px;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-1px);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #764ba2;
+}
+
+/* Element-specific colors */
+.filter-btn[data-element="water"] {
+    border-color: #3498db;
+    color: #3498db;
+}
+
+.filter-btn[data-element="water"].active {
+    background: #3498db;
+    color: white;
+}
+
+.filter-btn[data-element="fire"] {
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
+.filter-btn[data-element="fire"].active {
+    background: #e74c3c;
+    color: white;
+}
+
+.filter-btn[data-element="earth"] {
+    border-color: #8b4513;
+    color: #8b4513;
+}
+
+.filter-btn[data-element="earth"].active {
+    background: #8b4513;
+    color: white;
+}
+
+.filter-btn[data-element="air"] {
+    border-color: #9b59b6;
+    color: #9b59b6;
+}
+
+.filter-btn[data-element="air"].active {
+    background: #9b59b6;
+    color: white;
+}
+
+.filter-btn[data-element="magic"] {
+    border-color: #e056fd;
+    color: #e056fd;
+}
+
+.filter-btn[data-element="magic"].active {
+    background: #e056fd;
+    color: white;
+}
+
+.filter-btn[data-element="tech"] {
+    border-color: #f39c12;
+    color: #f39c12;
+}
+
+.filter-btn[data-element="tech"].active {
+    background: #f39c12;
+    color: white;
+}
+
+.filter-btn[data-element="undead"] {
+    border-color: #2c3e50;
+    color: #2c3e50;
+}
+
+.filter-btn[data-element="undead"].active {
+    background: #2c3e50;
+    color: white;
+}
+
+.filter-btn[data-element="life"] {
+    border-color: #27ae60;
+    color: #27ae60;
+}
+
+.filter-btn[data-element="life"].active {
+    background: #27ae60;
+    color: white;
+}
+
+.filter-btn[data-element="light"] {
+    border-color: #f1c40f;
+    color: #f1c40f;
+}
+
+.filter-btn[data-element="light"].active {
+    background: #f1c40f;
+    color: white;
+}
+
+.filter-btn[data-element="dark"] {
+    border-color: #34495e;
+    color: #34495e;
+}
+
+.filter-btn[data-element="dark"].active {
+    background: #34495e;
+    color: white;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Game Sections */
+.game-section {
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.collapsible {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    cursor: pointer;
+    padding: 18px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.5em;
+    transition: background 0.3s;
+    margin: 0;
+}
+
+.collapsible:hover {
+    opacity: 0.9;
+}
+
+.collapsible .toggle-icon {
+    float: right;
+    font-size: 0.8em;
+}
+
+.content {
+    padding: 20px;
+    display: block;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+/* Lists */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li[data-element] {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 15px 0 5px 0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background: #e8e8e8;
+}
+
+li[data-element="water"] {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+li[data-element="fire"] {
+    background: #ffebee;
+    color: #c62828;
+}
+
+li[data-element="earth"] {
+    background: #efebe9;
+    color: #5d4037;
+}
+
+li[data-element="air"] {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+li[data-element="magic"] {
+    background: #fce4ec;
+    color: #c2185b;
+}
+
+li[data-element="tech"] {
+    background: #fff8e1;
+    color: #f57c00;
+}
+
+li[data-element="undead"] {
+    background: #eceff1;
+    color: #263238;
+}
+
+li[data-element="life"] {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+li[data-element="light"] {
+    background: #fffde7;
+    color: #f9a825;
+}
+
+li[data-element="dark"] {
+    background: #e0e0e0;
+    color: #212121;
+}
+
+li[data-element="vehicles"],
+li[data-element="traps"] {
+    background: #e1bee7;
+    color: #6a1b9a;
+}
+
+/* Sub-lists */
+li[data-element] + ul {
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+li[data-element] + ul li {
+    background: white;
+    padding: 6px 12px;
+    margin: 3px 0;
+    border-left: 3px solid #667eea;
+    font-weight: normal;
+}
+
+/* Nested element lists (for vehicles) */
+li[data-element="vehicles"] ul li[data-element] {
+    margin-left: 20px;
+    font-size: 0.95em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    .game-nav a {
+        display: block;
+        margin: 5px 0;
+    }
+    
+    .filter-btn {
+        font-size: 0.85em;
+        padding: 6px 10px;
+    }
+    
+    .collapsible {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .game-nav,
+    .filter-controls {
+        display: none;
+    }
+    
+    .content {
+        display: block !important;
+    }
+    
+    .collapsible .toggle-icon {
+        display: none;
+    }
+}
