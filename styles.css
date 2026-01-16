@@ -331,6 +331,37 @@ li[data-element] + ul li {
     font-weight: normal;
 }
 
+/* Skylander Items with Checkboxes */
+.skylander-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.skylander-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    flex-shrink: 0;
+    accent-color: #667eea;
+}
+
+.skylander-item span {
+    flex-grow: 1;
+    transition: all 0.3s ease;
+}
+
+.skylander-item.checked {
+    opacity: 0.6;
+    background-color: #f0f0f0 !important;
+}
+
+.skylander-item.checked span {
+    text-decoration: line-through;
+    color: #888;
+}
+
 /* Nested element lists (for vehicles) */
 li[data-element="vehicles"] ul li[data-element] {
     margin-left: 20px;

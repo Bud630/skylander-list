@@ -461,6 +461,61 @@
     </main>
     
     <script>
+        // Add checkboxes to all skylander items
+        document.addEventListener('DOMContentLoaded', function() {
+            // Find all list items that contain skylander/trap/vehicle names (not element headers)
+            const allListItems = document.querySelectorAll('main ul ul li');
+            
+            allListItems.forEach(function(item) {
+                // Skip if this item has a data-element attribute (it's a category header)
+                if (item.hasAttribute('data-element')) {
+                    return;
+                }
+                
+                // Skip if already has a checkbox
+                if (item.querySelector('.skylander-checkbox')) {
+                    return;
+                }
+                
+                // Add class for styling
+                item.classList.add('skylander-item');
+                
+                // Create checkbox
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.className = 'skylander-checkbox';
+                
+                // Create span wrapper for text
+                const span = document.createElement('span');
+                span.textContent = item.textContent;
+                
+                // Clear the item and add checkbox + span
+                item.textContent = '';
+                item.appendChild(checkbox);
+                item.appendChild(span);
+                
+                // Load saved state from localStorage
+                const itemKey = 'skylander_' + span.textContent.trim();
+                const isChecked = localStorage.getItem(itemKey) === 'true';
+                checkbox.checked = isChecked;
+                if (isChecked) {
+                    item.classList.add('checked');
+                }
+                
+                // Add event listener for checkbox changes
+                checkbox.addEventListener('change', function() {
+                    const key = 'skylander_' + span.textContent.trim();
+                    localStorage.setItem(key, this.checked);
+                    
+                    if (this.checked) {
+                        item.classList.add('checked');
+                    } else {
+                        item.classList.remove('checked');
+                    }
+                });
+            });
+        });
+        
         // Collapsible sections functionality
         document.querySelectorAll('.collapsible').forEach(function(header) {
             header.addEventListener('click', function() {
